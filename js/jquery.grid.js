@@ -222,7 +222,6 @@
 							},
 
 							reload : function(data) {
-
 								if (data && typeof data.pagina == 'undefined') {
 									for (i in this.settings.data) {
 										if (typeof this.settings.data[i].val() != 'undefined'
