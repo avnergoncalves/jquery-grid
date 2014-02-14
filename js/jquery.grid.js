@@ -113,7 +113,6 @@
 			.extend(
 					$.grid,
 					{
-
 						defaults : {
 							table : {
 								"id" : "jquery-grid",
@@ -150,8 +149,9 @@
 								var txt = document.createTextNode(response);
 								cell.appendChild(txt);
 							},
-							on_create_action : function(cell, response, acoes,
-									row_id) {
+							on_create_icon : function(cell, response, acoes, row_id) {
+							},
+							on_create_action : function(cell, response, acoes, row_id) {
 							}
 						},
 
@@ -355,16 +355,11 @@
 											cell = document.createElement('td');
 
 											if (this.settings.colluns[y]['acoes']) {
-												this.settings
-														.on_create_action(
-																cell,
-																response.data[i][k],
-																this.settings.colluns[y]['acoes'],
-																row_id);
+												this.settings.on_create_action(cell, response.data[i][k], this.settings.colluns[y]['acoes'], row_id);
+											}else if(this.settings.colluns[y]['icone']){
+												this.settings.on_create_icon(cell, response.data[i][k], this.settings.colluns[y]['icone'], row_id);
 											} else {
-												this.settings.on_create_cell(
-														cell,
-														response.data[i][k]);
+												this.settings.on_create_cell(cell, response.data[i][k]);
 
 												if (this.settings.colluns[y].css_class) {
 													cell.className = this.settings.colluns[y].css_class;

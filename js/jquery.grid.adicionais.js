@@ -119,15 +119,19 @@ $.grid.setDefaults({
 			}
 	}*/	
 	/*,on_create_cell: function(cell, response){
-		var txt = document.createTextNode(response);					
+		var txt = document.createTextNode(response);
 		cell.appendChild(txt);
 	}*/
-	,on_create_action: function(cell, response, func_acoes, row_id){			
+	,on_create_icon: function(cell, response, param_icone, row_id){
+		var tag_i = document.createElement('i');
+		tag_i.className = param_icone[response.icon];
+		
+		cell.appendChild(tag_i);
+	}
+	,on_create_action: function(cell, response, func_acoes, row_id){
 		
 		var conf_acoes = {
 				 'editar':  'icone-preto ui-icon-pencil'
-				,'ativo':   'icone-preto ui-icon-check'
-				,'inativo': 'icone-preto ui-icon-closethick'
 		};
 		
 		if(!response.events){
@@ -136,20 +140,32 @@ $.grid.setDefaults({
 		}
 		
 		var events = response.events.split('|');
-		
-		$.each(events, function(i){			
+
+		$.each(events, function(i){
 			var evento = events[i];
-			var tag_a  = document.createElement('a');
-						
-			tag_a.setAttribute('href', 'javascript:;');
-			tag_a.onclick = function(){func_acoes[evento](response.value, row_id);};					
 			
-			var tag_i = document.createElement('i');
-			tag_i.className = conf_acoes[evento];
-			
-						
-			tag_a.appendChild(tag_i);
-			cell.appendChild(tag_a);
+			switch (evento) {
+				case 'checkbox':
+					var input  = document.createElement('input');
+					input.setAttribute('type', evento);
+					input.setAttribute('value', response.value);
+					input.onclick = function(){func_acoes[evento](response.value, row_id);};
+					
+					cell.appendChild(input);
+					break;
+				default:
+					var tag_a  = document.createElement('a');
+					
+					tag_a.setAttribute('href', 'javascript:;');
+					tag_a.onclick = function(){func_acoes[evento](response.value, row_id);};
+					
+					var tag_i = document.createElement('i');
+					tag_i.className = conf_acoes[evento];
+					
+					tag_a.appendChild(tag_i);
+					cell.appendChild(tag_a);
+					break;
+			}
 		});	
 	}
 	
