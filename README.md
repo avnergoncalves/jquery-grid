@@ -4,11 +4,11 @@ jquery.grid
 Plugin para desenvolvimento de grids escrito em javascirpt.
 
 ##Requirements
-    jQuery
+-jQuery
 
 ##Installation
 
-    The grid requires placement of HTML, CSS, and JavaScript. The HTML should use your existing grid system, including both a container and individual columns. The CSS sets up the appropriate styles necessary to display the grid. And lastly, the JavaScript sets up the grid toggling functionality, as well as handling the horizontal grid styles.
+The grid requires placement of HTML, CSS, and JavaScript. The HTML should use your existing grid system, including both a container and individual columns. The CSS sets up the appropriate styles necessary to display the grid. And lastly, the JavaScript sets up the grid toggling functionality, as well as handling the horizontal grid styles.
 
 ###Step 1: Adding the HTML
 
@@ -25,4 +25,4 @@ Plugin para desenvolvimento de grids escrito em javascirpt.
 ##Events
 
 
-[Browser Support]
+##Browser Support
