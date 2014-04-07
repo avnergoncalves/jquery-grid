@@ -31,6 +31,9 @@ You just need an element that will be the target for your grid.
 ###Step 3: Adding the CSS
 
 ##Usage
+
+###Dinamic
+
 The code below creates a dynamic grid, loading server information by ajax.
 
 ```
@@ -107,6 +110,9 @@ The return must be an ajax JSON as below.
 	}
 ], "total": 2}
 ```
+
+###Static
+
 
 ##Options
 
