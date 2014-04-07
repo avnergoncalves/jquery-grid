@@ -45,41 +45,67 @@ $("#example").grid(
 			th : {'width' : "5%"},
 			td : {'align' : "left"},
 			order : false,
-		acoes : {
-			"checkbox" : function(res, row_id) {
-				console.log('click');
-			},
-		}
-	}, {
-		name : "Name",
-		th : {'width' : "20%"},
-		td : {'align' : "left"}
-	},{
-		name : "Age",
-		th : {'width' : "20%"},
-		td : {'align' : "left"}
-	},{
-		name : "E-mail",
-		th : {'width' : "15%"}
-	},{
-		name : "Tel",
-		th : {'width' : "10%"}
-	},{
-		name : "Editar",
-		order : false,
-		th : {'width' : "5%"},
-		acoes : {
-			"editar" : function(res, row_id) {
-				window.location.href = "edit.php?id=" + res;
+			acoes : {
+				"checkbox" : function(res, row_id) {
+					console.log('click');
+				},
 			}
-		}
-	},{
-		name : "Status",
-		order : false,
-		th : {'width' : "5%"},
-		icone : {'ativo': 'icone-preto ui-icon-check', 'inativo': 'icone-preto ui-icon-closethick'}
-	} ]
+		}, {
+			name : "Name",
+			th : {'width' : "20%"},
+			td : {'align' : "left"}
+		},{
+			name : "Age",
+			th : {'width' : "20%"},
+			td : {'align' : "left"}
+		},{
+			name : "E-mail",
+			th : {'width' : "15%"}
+		},{
+			name : "Tel",
+			th : {'width' : "10%"}
+		},{
+			name : "Status",
+			order : false,
+			th : {'width' : "5%"},
+			acoes : {
+				"active" : function(res, row_id) {
+					window.location.href = "active.php?id=" + res;
+				},
+				"deactivate" : function(res, row_id) {
+					window.location.href = "deactivate.php?id=" + res;
+				}
+			}
+		},{
+			name : "Status",
+			order : false,
+			th : {'width' : "5%"},
+			icone : {'on': 'icone-preto ui-icon-check', 'off': 'icone-preto ui-icon-closethick'}
+		} ]
 });
+```
+The return must be an ajax JSON as below.
+
+```
+{"data":[
+	{
+		"1": {"value": 1, "events": "checkbox"}, 
+		"2": "Nome 1", 
+		"3": "23", 
+		"4": "test@test.com",
+		"5": "(11) 1111-11-11", 
+		"6": {"value": 2, "events": "deactivate"},
+		"7": {"icon": "on"}
+	},{
+		"1": {"value": 2, "events": "checkbox"},
+		"2": "Nome 2", 
+		"3": "25", 
+		"4": "test@test.com",
+		"5": "(22) 2222-22-22", 
+		"6": {"value": 2, "events": "active"},
+		"7": {"icon": "off"}
+	}
+], "total": 2}
 ```
 
 ##Options
