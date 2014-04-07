@@ -34,59 +34,52 @@ You just need an element that will be the target for your grid.
 The code below creates a dynamic grid, Loading server information by ajax.
 
 ```
-$("#grid_list_user").grid(
-			{
-				url : "/configuration/user/ajax/list",
-				data:{
-					filter: $('#filter')
-				},
-				colluns : [
-						{
-							name : '<input type="checkbox" id="chk_all" />',
-							th : {'width' : "5%"},
-							td : {'align' : "left"},
-							order : false,
-							acoes : {
-								"checkbox" : function(res, row_id) {
-									console.log('click');
-								},
-							}
-						},
-						{
-							name : "Name",
-							th : {'width' : "20%"},
-							td : {'align' : "left"}
-						},
-						{
-							name : "Age",
-							th : {'width' : "20%"},
-							td : {'align' : "left"}
-						},
-						{
-							name : "E-mail",
-							th : {'width' : "15%"}
-						},
-						{
-							name : "Tel",
-							th : {'width' : "10%"}
-						},
-						{
-							name : "Editar",
-							order : false,
-							th : {'width' : "5%"},
-							acoes : {
-								"editar" : function(res, row_id) {
-									window.location.href = "/configuration/user/edit?id=" + res;
-								}
-							}
-						},
-						{
-							name : "Status",
-							order : false,
-							th : {'width' : "5%"},
-							icone : {'ativo': 'icone-preto ui-icon-check', 'inativo': 'icone-preto ui-icon-closethick'}
-						} ]
-			});
+$("#example").grid(
+	{
+		url : "file.php",
+		data:{
+			filter: $('#filter')
+		},
+		colluns : [ {
+			name : '<input type="checkbox" id="chk_all" />',
+			th : {'width' : "5%"},
+			td : {'align' : "left"},
+			order : false,
+		acoes : {
+			"checkbox" : function(res, row_id) {
+				console.log('click');
+			},
+		}
+	}, {
+		name : "Name",
+		th : {'width' : "20%"},
+		td : {'align' : "left"}
+	},{
+		name : "Age",
+		th : {'width' : "20%"},
+		td : {'align' : "left"}
+	},{
+		name : "E-mail",
+		th : {'width' : "15%"}
+	},{
+		name : "Tel",
+		th : {'width' : "10%"}
+	},{
+		name : "Editar",
+		order : false,
+		th : {'width' : "5%"},
+		acoes : {
+			"editar" : function(res, row_id) {
+				window.location.href = "edit.php?id=" + res;
+			}
+		}
+	},{
+		name : "Status",
+		order : false,
+		th : {'width' : "5%"},
+		icone : {'ativo': 'icone-preto ui-icon-check', 'inativo': 'icone-preto ui-icon-closethick'}
+	} ]
+});
 ```
 
 ##Options
