@@ -3,7 +3,7 @@ jQuery Grid
 
 jQuery Grid is a plugin for creating dynamic and staticas grids. The goal is to create plugin from grids of an easy, fast and with a great performance no way to load the borwser user. 
 
-With the jQuery Grid you can paginate, sort and create events for dynamic or static girds. Its major advantage is the other grids are the events that are present in several parts, during the loading and manipulation of the grid, so that you can complete customization, meeting any demand.
+With jQuery grid you can page, sort, filter, cache (cookies and url) queries and create events to gird dynamic or static. Its biggest advantage is the other grids are the events that are present in various parts during handling and loading of the grid, so you can complete the customization, meeting all the demand.
 
 ##Requirements
 - jQuery
@@ -31,7 +31,7 @@ You just need an element that will be the target for your grid.
 ###Step 3: Adding the CSS
 
 ##Usage
-The code below creates a dynamic grid, Loading server information by ajax.
+The code below creates a dynamic grid, loading server information by ajax.
 
 ```
 $("#example").grid(
