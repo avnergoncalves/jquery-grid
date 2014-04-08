@@ -121,10 +121,10 @@ The return must be an ajax JSON as below.
 - data:
 
 - colluns:
-- - name:
-- - td:
-- - th:
-- - acoes:
+-- name:
+-- td:
+-- th:
+-- acoes:
 
 ##Events
 
