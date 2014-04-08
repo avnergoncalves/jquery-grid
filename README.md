@@ -158,5 +158,20 @@ The return must be an ajax JSON as below.
 
 ##Events
 
+- success:
+
+- on_create_row:
+
+- on_create_cell:
+
+- on_create_icon:
+
+- on_create_action:
 
 ##Browser Support
+- Internet Explorer: 6+
+- Firefox: 27+
+- Chrome: 31+
+- Safari: 7+
+- Opera: 20+
+
