@@ -116,15 +116,45 @@ The return must be an ajax JSON as below.
 
 ##Options
 
+- autoload:
+
+- limite:
+
 - url:
 
 - data:
 
+- cache_url:
+
+- cache_cookie:
+
+- table: 
+	- id: 
+	- width: 
+	- cellpadding: 
+	- cellspacing: 
+	- border: 
+	- class: 
+					
 - colluns:
 	- name:
 	- td:
 	- th:
 	- acoes:
+	- icone: 
+
+
+- paginacao:
+	- top:
+	- button:
+	- attr:
+
+- order:
+	- ini:
+	- classDesc:
+	- classAsc:
+
+
 
 ##Events
 
