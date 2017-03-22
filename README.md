@@ -1,7 +1,7 @@
-jQuery Grid
+XGrid
 ===========
 
-jQuery Grid is a plugin for creating dynamic and staticas grids. The goal is to create plugin from grids of an easy, fast and with a great performance no way to load the borwser user. 
+XGrid is a plugin for creating dynamic and staticas grids. The goal is to create plugin from grids of an easy, fast and with a great performance no way to load the borwser user. 
 
 With jQuery grid you can page, sort, filter, cache (cookies and url) queries and create events to gird dynamic or static. Its biggest advantage is the other grids are the events that are present in various parts during handling and loading of the grid, so you can complete the customization, meeting all the demand.
 
